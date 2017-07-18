@@ -17,7 +17,7 @@ Plugin.create(:now_playing) do
         # where hoge is:
         # title, artist, album, albumArtist, composer, trackNumber, etc....
         # See http://www.freedesktop.org/wiki/Specifications/mpris-spec/metadata/
-        msg = '"' + meta["xesam:title"] + '"  by ' + meta["xesam:artist"][0] +
+        msg = '"' + meta["xesam:title"] + '/' + meta["xesam:album"] + '" by ' + meta["xesam:artist"][0] +
             ' #NowPlaying'
         Service.primary.update(:message => msg)
     end
