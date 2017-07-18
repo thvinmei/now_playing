@@ -15,3 +15,20 @@ DBus使ってるのでdbusが動いてるシステムでしか動きません.
 
 誰でも書ける程度のことしかしてませんが誰もしてなかったので書きました. コロンブスの卵ですね.
 ではでは.
+
+
+以下追記．
+## 要 ruby-dbus
+```bash
+sudo gem install ruby-dbus
+```
+
+## 音楽プレーヤー名の確認と編集
+ターミナルで，
+```bash
+dbus-send --session --dest=org.freedesktop.DBus --type=method_call --print-reply /org/freedesktop/DBus org.freedesktop.DBus.ListNames | grep mpris
+```
+すれば実行中のMPRISで動作しているアプリケーションが抽出できるので，探す．
+
+参考．
+[DBus での BUS 一覧の取得方法](http://qiita.com/TNaruto/items/d481b4b5446f77ac556b)
