@@ -7,7 +7,7 @@ Plugin.create(:now_playing) do
         bus = DBus::SessionBus.instance
         # Change to your favorite player:
         # e.g. org.mpris.MediaPlayer2.rhythmbox
-        rb_service = bus.service("org.mpris.MediaPlayer2.audacious")
+        rb_service = bus.service("org.mpris.MediaPlayer2.google-play-music-desktop-player")
         rb_player = rb_service.object("/org/mpris/MediaPlayer2")
         rb_player.introspect
         rb_player_iface = rb_player["org.mpris.MediaPlayer2.Player"]
